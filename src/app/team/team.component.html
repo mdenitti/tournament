@@ -1,1 +1,7 @@
 <p>team works!</p>
+
+<ul class="list-group">
+    <li *ngFor="let team of Teams$ | async" class="list-group-item">
+        Team: {{team.name}}
+    </li>
+</ul>

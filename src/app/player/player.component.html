@@ -1,1 +1,7 @@
 <p>player works!</p>
+
+<ul class="list-group">
+    <li *ngFor="let player of Players$ | async" class="list-group-item">
+        Naam: {{player.name}} - Leeftijd: {{player.age}}
+    </li>
+</ul>
