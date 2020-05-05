@@ -15,6 +15,9 @@ import { TournamentNewComponent } from './tournament/tournament-new/tournament-n
 import { TournamentEditComponent } from './tournament/tournament-edit/tournament-edit.component';
 import { DivisionComponent } from './division/division/division.component';
 import { DivisionNewComponent } from './division/division-new/division-new.component';
+import { GameComponent } from './game/game/game.component';
+import { GameNewComponent } from './game/game-new/game-new.component';
+import { GameEditComponent } from './game/game-edit/game-edit.component';
 
 const routes: Routes = [
 { path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -32,7 +35,13 @@ const routes: Routes = [
 { path: 'team', component: TeamComponent},
 { path: 'team/:id', component: TeamComponent},
 { path: 'player', component: PlayerComponent},
-{ path: 'player/:id', component: PlayerComponent}
+{ path: 'player/:id', component: PlayerComponent},
+{ path: 'game', component: GameComponent},
+{ path: 'game/:id', component: GameComponent},
+{ path: 'gameNewComponent', component: GameNewComponent},
+{ path: 'gameNewComponent/:id', component: GameNewComponent},
+{ path: 'gameEditComponent', component: GameEditComponent},
+{ path: 'gameEditComponent/:id', component: GameEditComponent}
 
 ];
 
@@ -46,7 +55,10 @@ const routes: Routes = [
     TournamentNewComponent,
     TournamentEditComponent,
     DivisionComponent,
-    DivisionNewComponent
+    DivisionNewComponent,
+    GameComponent,
+    GameNewComponent,
+    GameEditComponent
   ],
   imports: [
     BrowserModule,

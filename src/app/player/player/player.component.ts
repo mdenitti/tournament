@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TournamentService } from 'src/shared/services/tournament.service';
-import { Player } from '../../shared/model/player.model';
+import { Player } from '../../../shared/model/player.model';
 import { Observable } from 'rxjs';
 
 
