@@ -1,10 +1,17 @@
-<h1>Overzicht Toernooien</h1>
+<h1 class="submenu">Overzicht Toernooien</h1>
 
 <ul class="list-group">
+
     <li *ngFor="let tournament of Tournaments$ | async" class="list-group-item">
-        Tournament: {{tournament.name}} &nbsp; {{tournament.id}}
         <button class="btn btn-secondary">Wijzigen</button> &nbsp;
-        <button (click)='deleteTournament(tournament.id)' class="btn btn-danger">Verwijder</button>
+        <button (click)='deleteTournament(tournament.id)' class="btn btn-danger">Verwijder</button> 
+        Tournament: {{tournament.name}} &nbsp; {{tournament.id}}
+
+        <div *ngFor="let item of tournament.referee"> <!-- Massimo-->
+            Ref: {{item.name}}
+       </div>
+
+        
     </li>
 </ul>
 

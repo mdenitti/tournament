@@ -5,6 +5,8 @@ export class Tournament {
     public matchduration: number,
     public intermission: number,
     public points_win: number,
-    public points_draw: number
+    public points_draw: number,
+    public refid:number
+    
     ) {}
    }

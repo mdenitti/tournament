@@ -12,9 +12,11 @@ class Referee extends Model
      *
      * @var array
      */
-    protected $fillable = [
-        'name'
-    ];
+    // protected $fillable = [
+    //     'name'
+    // ];
+    // Maximale rechten update en insert
+    protected $guarded = [];
 
     /**
      * The attributes excluded from the model's JSON form.
@@ -22,4 +24,10 @@ class Referee extends Model
      * @var array
      */
     protected $hidden = [];
+
+    public function tournament()
+    {
+        return $this->belongsToMany('App\Tournament');
+    }
+
 }

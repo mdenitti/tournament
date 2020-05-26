@@ -13,8 +13,8 @@ export class TournamentComponent implements OnInit {
 
   constructor(private tournamentservice: TournamentService) { }
 
-  addTournament(tournamentname: string, matchduration: number,intermission: number,pointswin: number,pointsdraw: number) {
-    const newTournament = new Tournament (null,tournamentname, matchduration,intermission,pointswin,pointsdraw);
+  addTournament(tournamentname: string, matchduration: number,intermission: number,pointswin: number,pointsdraw: number, refid:number) {
+    const newTournament = new Tournament (null,tournamentname, matchduration,intermission,pointswin,pointsdraw, refid);
     this.tournamentservice.addTournaments(newTournament).subscribe();
   }
 

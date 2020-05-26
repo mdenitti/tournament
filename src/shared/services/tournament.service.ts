@@ -15,7 +15,7 @@ export class TournamentService {
   // #############################
   // ### set URL's             ###
   // #############################
-  urlRoot = 'http://localhost/tournament/public/api/';
+  urlRoot = 'http://localhost:8000/public/api/';
 
   // #############################
   // ### GET methodes          ###
@@ -38,6 +38,13 @@ export class TournamentService {
   getTeams(): Observable<Team[]> {
     return this.http
       .get<Team[]>(this.urlRoot + 'teams')
+      .pipe(tap(res => console.log(res)));
+  }
+
+  //Massimo
+  getReferee(): Observable<Team[]> {
+    return this.http
+      .get<Team[]>(this.urlRoot + 'referees')
       .pipe(tap(res => console.log(res)));
   }
 

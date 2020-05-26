@@ -10,7 +10,8 @@ class TournamentController extends Controller
 
     public function showAllTournaments()
     {
-        return response()->json(tournament::all());
+       // hier is het te doen... Dit "eager loading"... met de with helper
+        return response()->json(Tournament::with('referee')->get());
     }
 
     public function showOneTournament($id)
@@ -20,8 +21,9 @@ class TournamentController extends Controller
 
     public function create(Request $request)
     {
-        $tournament = Tournament::create($request->all());
-
+        //dd($request);
+        $tournament = Tournament::create($request->all())->referee()->attach($request->refid);
+        
         return response()->json($tournament, 201);
     }
 

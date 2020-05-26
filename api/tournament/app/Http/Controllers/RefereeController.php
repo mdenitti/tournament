@@ -10,7 +10,7 @@ class RefereeController extends Controller
 
     public function showAllReferees()
     {
-        return response()->json(referee::all());
+        return response()->json(referee::with('tournament')->get());
     }
 
     public function showOneReferee($id)
@@ -20,7 +20,9 @@ class RefereeController extends Controller
 
     public function create(Request $request)
     {
-        $referee = Referee::create($request->all());
+       
+        $referee = Referee::create($request->all())->tournament()->attach($request->tournament);
+      
 
         return response()->json($referee, 201);
     }
@@ -29,7 +31,9 @@ class RefereeController extends Controller
     {
         $referee = Referee::findOrFail($id);
         $referee->update($request->all());
-
+        //update pivot tabel
+        $referee->tournament()->sync($request->tournament_id);
+      
         return response()->json($referee, 200);
     }
 
